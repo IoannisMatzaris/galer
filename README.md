@@ -91,6 +91,7 @@ This will display help for the tool. Here are all the switches it supports.
 | -c, --concurrency 	| Concurrency level _(default: 50)_                               	|
 |     --in-scope    	| Show in-scope URLs/same host only                               	|
 | -o, --output      	| Save fetched URLs output into file                              	|
+| -p, --proxy       	| Send requests through proxy                                     	|
 | -t, --timeout     	| Maximum time _(seconds)_ allowed for connection _(default: 60)_ 	|
 | -s, --silent      	| Silent mode _(suppress an errors)_                              	|
 | -v, --verbose     	| Verbose mode show error details unless you weren't use silent   	|

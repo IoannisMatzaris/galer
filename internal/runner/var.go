@@ -39,7 +39,7 @@ Options:
   -h, --help                  Display its helps
 
 Examples:
-  galer -u http://domain.tld
+  galer -u http://domain.tld -p http://proxy-server:8080
   galer -u urls.txt -o output.txt
   cat urls.txt | galer -o output.txt
 

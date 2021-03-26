@@ -32,6 +32,7 @@ Options:
   -c, --concurrency <int>     Concurrency level (default: 50)
       --in-scope              Show in-scope URLs/same host only
   -o, --output <FILE>         Save fetched URLs output into file
+  -p, --proxy <HOST:PORT>     Send requests through proxy
   -t, --timeout <int>         Maximum time (seconds) allowed for connection (default: 60)
   -s, --silent                Silent mode (suppress an errors)
   -v, --verbose               Verbose mode show error details unless you weren't use silent

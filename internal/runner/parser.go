@@ -23,6 +23,7 @@ type Options struct {
 	Verbose     bool
 	List        *bufio.Scanner
 	File        *os.File
+	Proxy       string
 }
 
 // Parse user given arguments
@@ -45,6 +46,9 @@ func Parse() *Options {
 
 	flag.StringVar(&opt.Output, "output", "", "")
 	flag.StringVar(&opt.Output, "o", "", "")
+
+	flag.StringVar(&opt.Proxy, "proxy", "", "")
+	flag.StringVar(&opt.Proxy, "p", "", "")
 
 	flag.BoolVar(&opt.Silent, "silent", false, "")
 	flag.BoolVar(&opt.Silent, "s", false, "")

@@ -12,6 +12,7 @@ import (
 // Config declare its configurations
 type Config struct {
 	Timeout int
+	Proxy   string
 	// Headers network.Headers
 	Context context.Context
 	Cancel  context.CancelFunc
@@ -19,8 +20,14 @@ type Config struct {
 
 // New defines context for the configurations
 func New(cfg *Config) *Config {
-	cfg.Context, _ = chromedp.NewContext(context.Background())
-	cfg.Context, cfg.Cancel = context.WithTimeout(cfg.Context, time.Duration(cfg.Timeout)*time.Second)
+	opts := append(chromedp.DefaultExecAllocatorOptions[:],
+		chromedp.ProxyServer(cfg.Proxy))
+
+	execAllocator, _ := chromedp.NewExecAllocator(context.Background(), opts...)
+
+	ctx, _ := chromedp.NewContext(execAllocator)
+
+	cfg.Context, cfg.Cancel = context.WithTimeout(ctx, time.Duration(cfg.Timeout)*time.Second)
 
 	return cfg
 }

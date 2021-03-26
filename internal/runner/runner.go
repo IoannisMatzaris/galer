@@ -15,6 +15,7 @@ func New(opt *Options) {
 	swg := sizedwaitgroup.New(con)
 	cfg = &galer.Config{
 		Timeout: opt.Timeout,
+		Proxy:   opt.Proxy,
 	}
 
 	for i := 0; i < con; i++ {
